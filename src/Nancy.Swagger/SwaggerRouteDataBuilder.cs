@@ -92,10 +92,9 @@ namespace Nancy.Swagger
             string name,
             string description = null,
             bool required = false,
-            bool allowMultiple = false,
             T defaultValue = default(T))
         {
-            return Param(ParameterType.Query, name, description, required, allowMultiple, defaultValue);
+            return Param(ParameterType.Query, name, description, required, defaultValue);
         }
 
         /// <summary>
@@ -111,10 +110,9 @@ namespace Nancy.Swagger
             string name,
             string description = null,
             bool required = false,
-            bool allowMultiple = false,
             T defaultValue = default(T))
         {
-            return Param(ParameterType.Body, name, description, required, allowMultiple, defaultValue);
+            return Param(ParameterType.Body, name, description, required, defaultValue);
         }
 
         /// <summary>
@@ -130,10 +128,9 @@ namespace Nancy.Swagger
             string name,
             string description = null,
             bool required = false,
-            bool allowMultiple = false,
             T defaultValue = default(T))
         {
-            return Param(ParameterType.Path, name, description, required, allowMultiple, defaultValue);
+            return Param(ParameterType.Path, name, description, required, defaultValue);
         }
 
         /// <summary>
@@ -151,7 +148,6 @@ namespace Nancy.Swagger
             string name,
             string description = null,
             bool required = false,
-            bool allowMultiple = false,
             T defaultValue = default(T))
         {
             var param = new SwaggerParameterData
@@ -160,7 +156,6 @@ namespace Nancy.Swagger
                     ParamType = paramType,
                     Description = description,
                     Required = required,
-                    AllowMultiple = allowMultiple,
                     DefaultValue = defaultValue,
                     ParameterModel = typeof(T)
                 };
