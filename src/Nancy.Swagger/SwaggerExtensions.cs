@@ -98,8 +98,7 @@ namespace Nancy.Swagger
             parameter.Name = parameterData.Name;
             parameter.ParamType = parameterData.ParamType;
             parameter.Description = parameterData.Description;
-            parameter.Required = parameterData.Required || parameterData.ParameterModel.IsImplicitlyRequired();
-            parameter.AllowMultiple = parameterData.ParameterModel.IsContainer();
+            parameter.Required = parameterData.Required || parameterData.ParameterModel.IsImplicitlyRequired() || parameter.ParamType == ParameterType.Path;
             parameter.DefaultValue = parameterData.DefaultValue;
 
             // Ensure when ParamType equals "body" name also equals "body" 
@@ -107,6 +106,10 @@ namespace Nancy.Swagger
             if (parameter.ParamType == ParameterType.Body)
             {
                 parameter.Name = "body";
+            }
+            else
+            {
+                parameter.AllowMultiple = parameterData.ParameterModel.IsContainer();
             }
 
             // "5.2.4 Parameter Object
