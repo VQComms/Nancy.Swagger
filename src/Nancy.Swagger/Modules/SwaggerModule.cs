@@ -3,7 +3,7 @@
 namespace Nancy.Swagger.Modules
 {
     [SwaggerApi]
-    public class SwaggerModule : NancyModule
+    public class SwaggerModule : LegacyNancyModule
     {
         public SwaggerModule(ISwaggerMetadataConverter converter)
             : base(SwaggerConfig.ResourceListingPath)

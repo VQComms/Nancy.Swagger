@@ -3,11 +3,11 @@ using Nancy.Swagger.Demo.Models;
 
 namespace Nancy.Swagger.Demo.Modules
 {
-    public class HomeModule : NancyModule
+    public class HomeModule : LegacyNancyModule
     {
         public HomeModule()
         {
-            Get["Home", "/"] = _ => "Hello Swagger!";
+            Get["Home", "/"] = _ => "Hello Swagger! Visit http://localhost:3999/docs/index.html and enter http://localhost:3999/api-docs in the Swagger UI";
 
             Get["GetUsers", "/users"] = _ => new[] { new User { Name = "Vincent Vega", Age = 45 } };
 

@@ -5,7 +5,7 @@ using System;
 
 namespace Nancy.Swagger.Annotations.Tests
 {
-    public class TestRoutesModule : NancyModule
+    public class TestRoutesModule : LegacyNancyModule
     {
         public TestRoutesModule()
             : base("testroutes")
